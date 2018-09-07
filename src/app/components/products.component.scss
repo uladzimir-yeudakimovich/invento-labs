@@ -11,6 +11,31 @@ h1 {
     }
     .input-group-append {margin-left: 24px;}
 }
+.show-modal {
+    width: 640px;
+    padding: 19px 16px 16px 24px;
+    background-color: rgba(255, 255, 255, 1);  
+    border: solid;
+    border-radius: 5px;
+    position: fixed;
+    top: 140px;
+    left: 27%;
+    z-index: 1;
+    h2 {font-size: 20px;}
+    p {
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.54);
+    }
+    .btn-light {
+        font-size: 14px;
+        color: rgba(196, 175, 201, 1);
+    }
+    .btn-primary {
+        font-size: 14px;
+        background-color: rgba(169, 129, 204, 1);
+        color: rgba(255, 255, 255, 1);
+    }
+  }
 
 .container {
     .col-md-4 {
@@ -37,8 +62,16 @@ h1 {
                 .product-company {
                     font-size: 13px;
                     color: rgba(0, 0, 0, 0.54);
-                }
+                } 
             }
+            .delete {
+                    position: absolute;
+                    right: 21px;
+                    top: 21px;
+                    width: 14px;
+                    height: 14px;
+                    opacity: 54%;
+                }
         }
         .image {
             height: 192px;

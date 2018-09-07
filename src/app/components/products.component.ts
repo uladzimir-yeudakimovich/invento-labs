@@ -10,6 +10,8 @@ export class ProductsComponent implements OnInit {
 
   public products = [];
   public searchStr: string = '';
+  public show: boolean = true;
+  public detale: number;
 
   constructor(private productsService: ProductsService) {}
 
@@ -19,6 +21,19 @@ export class ProductsComponent implements OnInit {
         this.products.push(dataFromServer['products'][key]);
       }
     });
-    console.log(this.products);
+  }
+
+  showDetails(e) {
+    this.show = false;
+    this.detale = e;
+  }
+
+  closeDetails() {
+    this.show = true;
+  }
+
+  deleteDetails() {
+    this.products.splice(this.detale, 1);
+    this.show = true;
   }
 }
