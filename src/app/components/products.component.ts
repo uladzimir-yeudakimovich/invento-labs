@@ -9,7 +9,7 @@ import { ProductsService } from '../products.service';
 export class ProductsComponent implements OnInit {
 
   public products = [];
-  public searchStr = '';
+  public searchStr: string = '';
 
   constructor(private productsService: ProductsService) {}
 
@@ -19,5 +19,6 @@ export class ProductsComponent implements OnInit {
         this.products.push(dataFromServer['products'][key]);
       }
     });
+    console.log(this.products);
   }
 }
