@@ -3,13 +3,12 @@ h1 {
     font-size: 32px;
     color: rgba(72, 72, 72, 1);
 }
-.col-md-6 {
-    padding-right: 0;
-    .input-group {
-        margin-top: 55px;
-        padding-right: 8px;
-    }
-    .input-group-append {margin-left: 24px;}
+input {
+    margin-top: 44px;
+}
+.btn {
+    margin-top: 55px;
+    background-color: rgba(169, 129, 204, 1);
 }
 .show-modal {
     width: 640px;
@@ -35,7 +34,7 @@ h1 {
         background-color: rgba(169, 129, 204, 1);
         color: rgba(255, 255, 255, 1);
     }
-  }
+}
 
 .container {
     .col-md-4 {
