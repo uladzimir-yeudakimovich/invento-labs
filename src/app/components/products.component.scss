@@ -1,15 +1,18 @@
-h1 {
-    padding: 32px 8px;
-    font-size: 32px;
-    color: rgba(72, 72, 72, 1);
+.search {
+    h1 {
+        padding: 32px 8px;
+        font-size: 32px;
+        color: rgba(72, 72, 72, 1);
+    }
+    input {
+        margin-top: 44px;
+    }
+    .btn {
+        margin-top: 55px;
+        background-color: rgba(169, 129, 204, 1);
+    }
 }
-input {
-    margin-top: 44px;
-}
-.btn {
-    margin-top: 55px;
-    background-color: rgba(169, 129, 204, 1);
-}
+
 .show-modal {
     width: 640px;
     padding: 19px 16px 16px 24px;
