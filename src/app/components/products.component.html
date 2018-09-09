@@ -7,12 +7,62 @@
             <input  type="text" class="form-control" placeholder="Search" [(ngModel)] = "searchStr">
         </div>
         <div class="col-md-2">
-            <button class="btn btn-primary" type="button">+ Add new</button>
+            <button class="btn btn-primary" type="button" (click)="newModal()">+ Add new</button>
         </div>
     </div>
 </div>
 
-<div class="container show-modal" *ngIf="this.show === false">
+<div class="container show-new-modal" *ngIf="this.showNewModal === true">
+    <div class="row">
+        <div class="col-md-11"><h2>Add new product:</h2></div>
+        <div class="col-md-1" (click)="closeNewModal()">&times;</div>
+    </div>
+    <div class="row">
+        <h6 class="col-md-4">Color logo</h6>
+        <input class="col-md-8" type="text" class="form-control" [(ngModel)] = "newProduct.logo">
+        <h6 class="col-md-4">Color image</h6>
+        <input class="col-md-8" type="text" class="form-control" [(ngModel)] = "newProduct.image">
+        <h6 class="col-md-4">Product name</h6>
+        <input class="col-md-8" type="text" class="form-control" [(ngModel)] = "newProduct.name">
+        <h6 class="col-md-4">Company name</h6>
+        <input class="col-md-8" type="text" class="form-control" [(ngModel)] = "newProduct.company">
+        <h6 class="col-md-4">Description</h6>
+        <input class="col-md-8" type="text" class="form-control" [(ngModel)] = "newProduct.description">
+        <h6 class="col-md-4">Full description</h6>
+        <input class="col-md-8" type="text" class="form-control" [(ngModel)] = "newProduct.modal">
+    </div>
+    <div class="row">
+        <div class="col-md-8"></div>
+        <div class="col-md-4">
+            <button class="btn btn-light" (click)="closeNewModal()">DECLINE</button>
+            <button class="btn btn-primary" (click)="addNewProduct()">ADD</button>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="this.products.length !== 0">
+    <div class="container">
+        <div class="row">
+            <app-product class="col-md-4" 
+                *ngFor="let product of this.products | search:searchStr"
+                [product] = "product"
+            ></app-product>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="this.localProducts.length !== 0">
+    <div class="container">
+        <div class="row">
+            <app-product class="col-md-4" 
+                *ngFor="let product of this.localProducts | search:searchStr"
+                [product] = "product"
+            ></app-product>
+        </div>
+    </div>
+</div>
+
+<div class="container show-modal" *ngIf="this.showNewModal === true">
     <div class="row">
         <div class="col-md-11"><h2>Permissions</h2></div>
         <div class="col-md-1" (click)="closeDetails()">&times;</div>
@@ -29,31 +79,6 @@
         <div class="col-md-4">
             <button class="btn btn-light" (click)="closeDetails()">DECLINE</button>
             <button class="btn btn-primary" (click)="deleteDetails()">ACCEPT</button>
-        </div>
-    </div>
-</div>
-
-<div *ngIf="this.products.length !== 0">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4" *ngFor="let product of this.products | search:searchStr">
-                <div class="product-card">
-                    <div class="header-product">
-                        <div class="logo" style.background-color={{product.logo}}></div>
-                        <div class="name">
-                            <div class="product-name">{{product.name}}</div>
-                            <div class="product-company">{{product.company}}</div>
-                        </div>
-                        <div class="delete" (click)="showDetails(this.products.indexOf(product))" id="{{this.products.indexOf(product)}}">&times;</div>
-                    </div>
-                    <div class="image" style.background-color={{product.image}}></div>
-                    <div class="product-description">{{product.description}}</div>
-                    <div class="actions">
-                        <div class="action1">{{product.action1}}</div>
-                        <div class="action2">{{product.action2}}</div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>

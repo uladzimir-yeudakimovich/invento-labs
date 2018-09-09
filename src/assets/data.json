@@ -1,58 +1,70 @@
 {
     "products": [
         {
+            "id": "0",
             "logo": "rgba(105, 121, 150, 1)",
             "name": "Product 1",
             "company": "Company 1",
             "image": "rgba(105, 121, 150, 1)",
             "description": "Lorem ipsum dolor sit amet, soluta regione urbanitas vis in, qui elit populo ut.",
             "action1": "ACTION 1",
-            "action2": "ACTION 2"
+            "action2": "ACTION 2",
+            "modal": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna wirl aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisinuli."
         },
         {
+            "id": "1",
             "logo": "rgba(147, 84, 160, 1)",
             "name": "Product 2",
             "company": "Company 2",
             "image": "rgba(147, 84, 160, 1)",
             "description": "Lorem ipsum dolor sit amet, soluta regione urbanitas vis in, qui elit populo ut.",
             "action1": "ACTION 1",
-            "action2": "ACTION 2"
+            "action2": "ACTION 2",
+            "modal": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna wirl aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisinuli."
         },
         {
+            "id": "2",
             "logo": "rgba(120, 61, 132, 1)",
             "name": "Product 3",
             "company": "Company 3",
             "image": "rgba(120, 61, 132, 1)",
             "description": "Lorem ipsum dolor sit amet, soluta regione urbanitas vis in, qui elit populo ut.",
             "action1": "ACTION 1",
-            "action2": "ACTION 2"
+            "action2": "ACTION 2",
+            "modal": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna wirl aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisinuli."
         },
         {
+            "id": "3",
             "logo": "rgba(102, 37, 116, 1)",
             "name": "Product 4",
             "company": "Company 4",
             "image": "rgba(102, 37, 116, 1)",
             "description": "Lorem ipsum dolor sit amet, soluta regione urbanitas vis in, qui elit populo ut.",
             "action1": "ACTION 1",
-            "action2": "ACTION 2"
+            "action2": "ACTION 2",
+            "modal": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna wirl aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisinuli."
         },
         {
+            "id": "4",
             "logo": "rgba(216, 192, 138, 1)",
             "name": "Product 5",
             "company": "Company 5",
             "image": "rgba(216, 192, 138, 1)",
             "description": "Lorem ipsum dolor sit amet, soluta regione urbanitas vis in, qui elit populo ut.",
             "action1": "ACTION 1",
-            "action2": "ACTION 2"
+            "action2": "ACTION 2",
+            "modal": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna wirl aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisinuli."
         },
         {
+            "id": "5",
             "logo": "rgba(158, 196, 195, 1)",
             "name": "Product 6",
             "company": "Company 6",
             "image": "rgba(158, 196, 195, 1)",
             "description": "Lorem ipsum dolor sit amet, soluta regione urbanitas vis in, qui elit populo ut.",
             "action1": "ACTION 1",
-            "action2": "ACTION 2"
+            "action2": "ACTION 2",
+            "modal": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna wirl aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisinuli."
         }
     ]
 }

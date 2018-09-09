@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ProductsComponent } from './components/products.component';
+import { ProductComponent } from './components/product/product.component';
 import { SearchPipe } from './search.pipe';
 
 import { ProductsService } from './products.service';
@@ -13,6 +14,7 @@ import { ProductsService } from './products.service';
   declarations: [
     AppComponent,
     ProductsComponent,
+    ProductComponent,
     SearchPipe
   ],
   imports: [

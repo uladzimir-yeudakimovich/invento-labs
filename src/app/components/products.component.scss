@@ -12,22 +12,16 @@
         background-color: rgba(169, 129, 204, 1);
     }
 }
-
-.show-modal {
+.show-new-modal {
     width: 640px;
     padding: 19px 16px 16px 24px;
     background-color: rgba(255, 255, 255, 1);  
     border: solid;
     border-radius: 5px;
     position: fixed;
-    top: 140px;
+    top: 20px;
     left: 27%;
     z-index: 1;
-    h2 {font-size: 20px;}
-    p {
-        font-size: 16px;
-        color: rgba(0, 0, 0, 0.54);
-    }
     .btn-light {
         font-size: 14px;
         color: rgba(196, 175, 201, 1);
@@ -38,62 +32,9 @@
         color: rgba(255, 255, 255, 1);
     }
 }
-
 .container {
     .col-md-4 {
         padding: 12px 8px;
-    }
-    .product-card {
-        max-width: 1000px;
-        background-color: rgba(255, 255, 255, 1);       
-        .header-product {       
-            display: flex;
-            padding: 16px;
-            .logo {
-                width: 40px; 
-                height: 40px; 
-                background-color: rgba(105, 121, 150, 1); 
-                border-radius: 50%;
-            }
-            .name {
-                margin-left: 12px;
-                .product-name {
-                    font-size: 16px;
-                    color: rgba(31, 31, 31, 0.87);
-                }
-                .product-company {
-                    font-size: 13px;
-                    color: rgba(0, 0, 0, 0.54);
-                } 
-            }
-            .delete {
-                    position: absolute;
-                    right: 21px;
-                    top: 21px;
-                    width: 14px;
-                    height: 14px;
-                    opacity: 54%;
-                }
-        }
-        .image {
-            height: 192px;
-            background-color: rgba(105, 121, 150, 1);
-        }
-        .product-description {
-            padding: 16px;
-            font-size: 14px;
-            color: rgba(0, 0, 0, 0.87);
-        }
-        .actions {
-            display: flex;
-            padding: 16px;
-            font-size: 14px;
-            color: rgba(77, 77, 77, 1);
-            .action1 {}
-            .action2 {
-                margin-left: 16px;
-            }
-        }
     }
     nav {
         margin: 16px 0 58px;
