@@ -13,10 +13,10 @@ import { HoverDirective } from './hover.directive';
 import { ProductsService } from './products.service';
 
 const routes: Routes = [
-  { path: '/1', component: ProductsComponent },
-  { path: '/2', component: ProductsComponent },
-  { path: '/3', component: ProductsComponent },
-  { path: '/4', component: ProductsComponent }
+  { path: '/page1', component: ProductsComponent },
+  { path: '/page2', component: ProductsComponent },
+  { path: '/page3', component: ProductsComponent },
+  { path: '/page4', component: ProductsComponent }
 ];
 
 @NgModule({
