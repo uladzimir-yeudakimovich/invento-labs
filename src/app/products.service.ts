@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 export class ProductsService {
   public products = [];
   public localProducts = [];
-  public model = [];
+  //public model = [];
 
   constructor(private http: HttpClient) {}
 
@@ -29,23 +29,21 @@ export class ProductsService {
 
   public updateProducts(product) {
     let body = JSON.stringify(product);
-    // return this.http.put("src/assets/data.json", body);       /*for server*/
+    // return this.http.put("src/assets/data.json", body);      /*for server*/
     return localStorage.setItem("products", body);              /*for localStorage*/
   }
 
-  // public updateLocalProducts(id) {
-  //   this.localProducts = [];
-  //   let data = this.getLocalProduct();
-  //   for (const key in data) {
-  //     if (data.id !== id) {
-  //       this.localProducts.push(data[key]);
-  //     }
-  //   }
-  //   this.localProducts.forEach((n) => this.model.push(n)); 
-  //   let body = JSON.stringify({products: this.model});
-  //   // return this.http.put("src/assets/data.json", body);       /*for server*/
-  //   console.log(localStorage.setItem("products", body));              /*for localStorage*/
-  // }
+  public updateLocalProducts(id) {
+    this.localProducts = [];
+    let data = this.getLocalProduct();
+    for (const key in data['products']) {
+      if (+data['products'][key].id !== +id) {
+        this.localProducts.push(data['products'][key]);
+      }
+    }
+    let body = JSON.stringify({products: this.localProducts});
+    return localStorage.setItem("products", body);
+  }
 
   public getLocalProduct() {
     return JSON.parse(localStorage.getItem("products"));

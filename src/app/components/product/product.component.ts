@@ -27,6 +27,6 @@ export class ProductComponent {
   deleteDetails() {
     this.show = true;
     this.productsService.setProduct(this.detale);
-    // this.productsService.updateLocalProducts(this.detale);
+    this.productsService.updateLocalProducts(this.detale);
   }
 }

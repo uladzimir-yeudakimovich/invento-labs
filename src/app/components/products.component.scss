@@ -10,6 +10,8 @@
     .btn {
         margin-top: 55px;
         background-color: rgba(169, 129, 204, 1);
+        position: absolute;
+        right: 8px;
     }
 }
 .show-new-modal {
@@ -41,6 +43,13 @@
         li {
             height: 34px;
             margin-left: 8px;
+        }
+    }
+}
+@media (max-width: 767px) {
+    .search {
+        .btn {
+            top: -240px;
         }
     }
 }
