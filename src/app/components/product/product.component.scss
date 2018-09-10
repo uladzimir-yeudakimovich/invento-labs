@@ -82,3 +82,8 @@
         color: rgba(255, 255, 255, 1);
     }
 }
+@media (max-width: 767px) {
+    .product-card {
+        margin-bottom: 30px;
+    }
+}

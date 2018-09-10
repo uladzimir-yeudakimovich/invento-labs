@@ -8,10 +8,10 @@
         margin-top: 44px;
     }
     .btn {
-        margin-top: 55px;
+        margin-top: 44px;
         background-color: rgba(169, 129, 204, 1);
         position: absolute;
-        right: 8px;
+        right: 16px;
     }
 }
 .show-new-modal {
@@ -34,10 +34,16 @@
         color: rgba(255, 255, 255, 1);
     }
 }
-@media (max-width: 767px) {
+@media (max-width: 767px) {  
     .search {
+        h1 {
+            padding-bottom: 12px;
+        }
+        input {
+            margin: 0 0 17px;
+        }
         .btn {
-            top: -240px;
+            top: -157px;
         }
     }
 }
