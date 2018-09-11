@@ -4,7 +4,7 @@
             <h1>Products</h1>
         </div>
         <div class="col-md-4">
-            <input  type="text" class="form-control" placeholder="Search" [(ngModel)] = "searchStr">
+            <input  type="text" aria-label="search" class="form-control" placeholder="Search" [(ngModel)] = "searchStr">
         </div>
         <div class="col-md-2">
             <button class="btn btn-primary" type="button" (click)="newModal()">+ Add new</button>
@@ -19,17 +19,17 @@
     </div>
     <div class="row">
         <h6 class="col-md-4">Color logo</h6>
-        <input class="col-md-8" type="text" class="form-control" [(ngModel)] = "newProduct.logo">
+        <input class="col-md-8" type="text" aria-label="logo" class="form-control" [(ngModel)] = "newProduct.logo">
         <h6 class="col-md-4">Color image</h6>
-        <input class="col-md-8" type="text" class="form-control" [(ngModel)] = "newProduct.image">
+        <input class="col-md-8" type="text" aria-label="image" class="form-control" [(ngModel)] = "newProduct.image">
         <h6 class="col-md-4">Product name</h6>
-        <input class="col-md-8" type="text" class="form-control" [(ngModel)] = "newProduct.name">
+        <input class="col-md-8" type="text" aria-label="name" class="form-control" [(ngModel)] = "newProduct.name">
         <h6 class="col-md-4">Company name</h6>
-        <input class="col-md-8" type="text" class="form-control" [(ngModel)] = "newProduct.company">
+        <input class="col-md-8" type="text" aria-label="company" class="form-control" [(ngModel)] = "newProduct.company">
         <h6 class="col-md-4">Description</h6>
-        <input class="col-md-8" type="text" class="form-control" [(ngModel)] = "newProduct.description">
+        <input class="col-md-8" type="text" aria-label="description" class="form-control" [(ngModel)] = "newProduct.description">
         <h6 class="col-md-4">Full description</h6>
-        <input class="col-md-8" type="text" class="form-control" [(ngModel)] = "newProduct.modal">
+        <input class="col-md-8" type="text" aria-label="modal" class="form-control" [(ngModel)] = "newProduct.modal">
     </div>
     <div class="row">
         <div class="col-md-8"></div>
