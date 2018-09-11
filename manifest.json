@@ -1,0 +1,16 @@
+{
+    "short_name": "Task",
+    "name": "Task for InventoLabs",
+    "start_url": "https://uladzimir-yeudakimovich.ml",
+    "background_color": "#3367D6",
+    "theme_color": "#536878",
+    "display": "standalone",
+    "icons": [
+      {
+       "src": "favicon.ico",
+       "sizes": "36x36",
+       "type": "image\/ico",
+       "density": "0.75"
+      }
+    ]
+  }
