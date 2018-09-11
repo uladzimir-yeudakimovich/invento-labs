@@ -13,14 +13,21 @@
   <base href="http://uladzimir-yeudakimovich.ml/invento-labs/">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="styles.0d97dd79aa7511477d5e.css">
+  <link rel="stylesheet" href="styles.css">
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
   <app-root></app-root>
-  <script async src="runtime.06daa30a2963fa413676.js"></script>
-  <script async src="polyfills.f6ae3e8b63939c618130.js"></script>
-  <script async src="main.be4024324efac23750d9.js"></script>
+  <script async src="runtime.js"></script>
+  <script async src="polyfills.js"></script>
+  <script async src="main.js"></script>
   <script async src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    if('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register('sw.js')
+        .then(function() { console.log("Service Worker Registered"); });
+    }
+  </script>
 </body>
 </html>
