@@ -44,8 +44,8 @@ export class ProductsComponent implements OnInit {
     for (const key in this.productsService.getLocalProduct()['products']) {
       this.localProducts.push(this.productsService.getLocalProduct()['products'][key]);
     }
-    // this.products.forEach((n) => this.model.push(n));          /*for server*/
-    this.localProducts.forEach((n) => this.model.push(n));        /*for localStorage*/
+    // this.products.forEach((n) => this.model.push(n));            /*for server*/
+    this.localProducts.forEach((n) => this.model.push(n));          /*for localStorage*/
   }
 
   newModal() {

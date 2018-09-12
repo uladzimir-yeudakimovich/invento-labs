@@ -40,25 +40,21 @@
     </div>
 </div>
 
-<div *ngIf="this.products.length !== 0">
-    <div class="container">
-        <div class="row">
-            <app-product class="col-md-4" 
-                *ngFor="let product of this.products | search:searchStr"
-                [product] = "product"
-            ></app-product>
-        </div>
+<div class="container" *ngIf="this.products.length !== 0">
+    <div class="row">
+        <app-product class="col-md-4" 
+            *ngFor="let product of this.products | search:searchStr"
+            [product] = "product"
+        ></app-product>
     </div>
 </div>
 
-<div *ngIf="this.localProducts.length !== 0">
-    <div class="container">
-        <div class="row">
-            <app-product class="col-md-4" 
-                *ngFor="let product of this.localProducts | search:searchStr"
-                [product] = "product"
-            ></app-product>
-        </div>
+<div class="container" *ngIf="this.localProducts.length !== 0">
+    <div class="row">
+        <app-product class="col-md-4" 
+            *ngFor="let product of this.localProducts | search:searchStr"
+            [product] = "product"
+        ></app-product>
     </div>
 </div>
 
