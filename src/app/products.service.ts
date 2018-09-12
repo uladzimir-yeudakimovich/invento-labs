@@ -46,6 +46,6 @@ export class ProductsService {
   }
 
   public getLocalProduct() {
-    return JSON.parse(localStorage.getItem("products"));
+    return localStorage.getItem("products") ? JSON.parse(localStorage.getItem("products")) : {};
   }
 }
