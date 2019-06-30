@@ -2,7 +2,6 @@ const cacheName = 'V1';
 
 const filesToCache = [
   '/',
-  '/main.js',
   '/assets/images/logo_phone.jpg',
   '/assets/images/logo_laptop.jpg',
   '/assets/images/logo_tablet.jpg',
