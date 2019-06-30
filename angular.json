@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "invento-labs": {
+    "angular-scss": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,11 +13,11 @@
           "styleext": "scss"
         }
       },
-      "targets": {
+      "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/invento-labs",
+            "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -27,7 +27,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css",
+              "src/styles.scss",
+              "src/theme/app-theme.scss"
             ],
             "scripts": []
           },
@@ -54,18 +57,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "invento-labs:build"
+            "browserTarget": "angular-scss:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "invento-labs:build:production"
+              "browserTarget": "angular-scss:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "invento-labs:build"
+            "browserTarget": "angular-scss:build"
           }
         },
         "test": {
@@ -99,19 +102,19 @@
         }
       }
     },
-    "invento-labs-e2e": {
+    "angular-scss-e2e": {
       "root": "e2e/",
       "projectType": "application",
-      "targets": {
+      "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "invento-labs:serve"
+            "devServerTarget": "angular-scss:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "invento-labs:serve:production"
+              "devServerTarget": "angular-scss:serve:production"
             }
           }
         },
@@ -127,5 +130,5 @@
       }
     }
   },
-  "defaultProject": "invento-labs"
+  "defaultProject": "angular-scss"
 }

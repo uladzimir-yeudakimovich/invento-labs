@@ -1,0 +1,32 @@
+@import "../../../styles/colors.scss";
+
+.contacts_title {
+  display: flex;
+  justify-content: center;
+}
+
+.contacts_items {
+  padding: 0;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  list-style-type: none;
+  font-size: 1.2rem;
+}
+
+.contact-link {
+  text-decoration: none;
+  color: $link-color;
+  padding-left: 12px;
+  font-size: 1.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.contact-link:hover {
+  color: $hover-link-color;
+}

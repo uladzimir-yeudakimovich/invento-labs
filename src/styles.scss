@@ -1,3 +1,70 @@
+@import "./app/styles/colors.scss";
+
+@font-face {
+  font-family: 'my-icon';
+  src: url('./assets/fonts/my-icon.eot?wmbfzs');
+  src: url('./assets/fonts/my-icon.eot?wmbfzs#iefix') format('embedded-opentype'),
+       url('./assets/fonts/my-icon.ttf?wmbfzs') format('truetype'),
+       url('./assets/fonts/my-icon.woff?wmbfzs') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
-    background-color: #F7F7F7;
+  margin: 0;
+  font-family: Roboto sans-serif;
+}
+
+.owl-theme .owl-dots .owl-dot span {
+  background: $link-color;
+}
+
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+  background-color: $delete-message-color;
+}
+
+i {
+  font-family: 'my-icon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.lt-icon-cloud:before {
+  content: "\e900";
+}
+
+.lt-icon-codewars:before {
+  content: "\e901";
+}
+
+.lt-icon-envelope:before {
+  content: "\e902";
+}
+
+.lt-icon-github:before {
+  content: "\e903";
+}
+
+.lt-icon-linkedin:before {
+  content: "\e904";
+}
+
+.lt-icon-phone:before {
+  content: "\e905";
+}
+
+.lt-icon-star:before {
+  content: "\e906";
+  color: #fff;
+}
+
+.lt-icon-students-cap:before {
+  content: "\e907";
 }

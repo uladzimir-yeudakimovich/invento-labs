@@ -1,17 +1,8 @@
-<router-outlet></router-outlet>
-
-<div class="container">
-    <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-end">
-            <li class="page-item"><a class="page-link" routerLink="/page1">1</a></li>
-            <li class="page-item"><a class="page-link" routerLink="/page2">2</a></li>
-            <li class="page-item"><a class="page-link" routerLink="/page3">3</a></li>
-            <li class="page-item"><a class="page-link" routerLink="/page4">4</a></li>
-            <li class="page-item">
-                <a class="page-link" routerLink="/">Next page &#9658;</a>
-            </li>
-        </ul>
-    </nav>
+<div class="languages">
+    <button class="change-language {{ isEnglish ? 'change-language_unactive' : 'change-language_active' }}" (click)="switchLanguage('en')">En</button>
+    <button class="change-language {{ isEnglish ? 'change-language_active' : 'change-language_unactive' }}" (click)="switchLanguage('ru')">Ru</button>
 </div>
 
-<!-- <ngb-pagination [collectionSize]="40" [(page)]="page" aria-label="Default pagination"></ngb-pagination> -->
+<app-header></app-header>
+<app-main></app-main>
+<app-footer></app-footer>

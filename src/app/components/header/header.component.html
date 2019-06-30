@@ -1,0 +1,39 @@
+<header class="header">
+  <figure class="container header__laptop">
+    <img class="rectangle" src="assets/images/logo_laptop.jpg" alt="logo_laptop">
+  </figure>
+  <article class="container">
+    <h3 class="header__subname">{{ 'header.position' | translate }}</h3>
+    <h1 class="header__name">{{ 'header.name' | translate }}</h1>
+    <figure class="header__phone">
+      <img class="circle" src="assets/images/logo_phone.jpg" alt="logo_phone">
+    </figure>
+    <figure class="header__tablet">
+      <img class="circle" src="assets/images/logo_tablet.jpg" alt="logo_tablet">
+    </figure>
+    <div class="header__description">
+      <h4 class="header__description-title">{{ 'header.education.title' | translate }}</h4>
+      <ul>
+        <li>{{ 'header.education.harvard' | translate }}</li>
+        <li>{{ 'header.education.rolling' | translate }}</li>
+        <li>{{ 'header.education.udemy' | translate }}</li>
+      </ul>
+      <h4 class="header__description-title">{{ 'header.experience.title' | translate }}</h4>
+      <ul>
+        <li>{{ 'header.experience.freelance' | translate }}</li>
+        <li>{{ 'header.experience.generalov' | translate }}</li>
+        <li>{{ 'header.experience.ocsico' | translate }}</li>
+        <li>{{ 'header.experience.imlab' | translate }}</li>
+        <li>{{ 'header.experience.lifetech' | translate }}</li>
+      </ul>
+      <h4 class="header__description-title">{{ 'header.technology.title' | translate }}</h4>
+      <ul *ngFor="let my of data">
+        <li class="technology_level">{{ my.technology }}
+          <div>
+            <i *ngFor="let star of my.level" class="lt-icon-star"></i>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </article>
+</header>

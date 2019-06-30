@@ -1,0 +1,21 @@
+<main class="main">
+	<h1 class="main__title">{{ 'title' | translate }}</h1>
+	<div *ngFor="let slide of this.data, let e=even;">
+		<div class="{{ e ? 'main__my-works-left' : 'main__my-works-right' }}">
+			<article class="main__container">
+				<div>
+					<h3 class="main__my-work_slide-name">{{ slide.name | translate }}</h3>
+					<a class="main__my-work_slide-link" href="{{ slide.link }}" target="_blank" rel="noopener">{{ slide.click | translate }}</a>
+				</div>
+				<p class="main__my-work_description">&nbsp;{{ slide.description | translate }}</p>
+			</article>
+			<owl-carousel-o [options]="customOptions" class="main__container" *ngIf="data">
+				<ng-container *ngFor="let img of slide.images; let i=index">
+					<ng-template carouselSlide>
+						<img class="main__my-work_img" src="{{ img }}" alt="Random {{ i + 1 }} slide">
+					</ng-template>
+				</ng-container>
+			</owl-carousel-o>
+		</div>
+	</div>
+</main>

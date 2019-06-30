@@ -1,43 +1,45 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-import { RouterModule, Routes } from '@angular/router';
-// import { NgbCollapseModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
 
 import { AppComponent } from './app.component';
-import { ProductsComponent } from './components/products.component';
-import { ProductComponent } from './components/product/product.component';
-import { SearchPipe } from './search.pipe';
-import { HoverDirective } from './hover.directive';
+import { HeaderComponent } from './components/header/header.component';
+import { MainComponent } from './components/main/main.component';
+import { FooterModule } from './components/footer/footer.module';
 
-import { ProductsService } from './products.service';
-
-const routes: Routes = [
-  { path: '', component: ProductsComponent },
-  { path: 'page1', component: ProductsComponent },
-  { path: 'page2', component: ProductsComponent },
-  { path: 'page3', component: ProductsComponent },
-  { path: 'page4', component: ProductsComponent }
-];
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
+}
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ProductsComponent,
-    ProductComponent,
-    SearchPipe,
-    HoverDirective
-  ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule,
-    RouterModule.forRoot(routes),
-    // NgbModule.forRoot(),
-    // NgbCollapseModule
+    ReactiveFormsModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
+      }
+    }),
+    CarouselModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    FooterModule,
   ],
-  providers: [ProductsService],
-  bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    MainComponent,
+  ],
+  providers: [ ],
+  bootstrap: [ AppComponent ]
 })
-export class AppModule {}
+export class AppModule { }

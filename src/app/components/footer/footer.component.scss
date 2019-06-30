@@ -1,0 +1,30 @@
+@import "../../styles/colors.scss";
+
+.footer {
+  background-color: $footer-background;
+  background-image: url(/assets/images/social_icons/bg-contours.svg);
+  margin-top: 50px;
+  padding: 15px calc(15px + 1%);
+}
+
+.footer_information {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 50%;
+  display: inline-block;
+  max-width: 600px;
+}
+
+@media (max-width: 768px) {
+  .footer_information {
+    display: block;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+  }
+}

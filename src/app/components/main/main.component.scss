@@ -1,0 +1,70 @@
+@import "../../styles/colors.scss";
+
+.main {
+  padding: 0 15px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.main__title {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.main__my-works-right {
+  display: flex;
+  margin-top: 20px;
+}
+
+.main__my-works-left {
+  display: flex;
+  margin-top: 20px;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+
+.main__container {
+  width: 48% !important;
+  margin: 8px 1% !important;
+  display: inline-block !important;
+}
+
+.main__my-work_slide-name {
+  display: flex;
+  justify-content: center;
+}
+
+.main__my-work_slide-link {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color: $link-color;
+}
+
+.main__my-work_slide-link:hover {
+  color: $hover-link-color
+}
+
+.main__my-work_description {
+  opacity: 0.8;
+  text-align: justify;
+}
+
+.main__my-work_img {
+  width: 100% !important;
+}
+
+@media (max-width: 768px) {
+  .main__my-works-left,
+  .main__my-works-right {
+    display: block;
+    margin-top: 20px;
+  }
+  
+  .main__container {
+    width: 100% !important;
+    margin: 0 !important;
+    display: block !important;
+  }
+}
