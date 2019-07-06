@@ -7,7 +7,6 @@ import { RemoveSpaces } from '../../pipes/remove-spaces';
 import { ContactsComponent } from './contacts/contacts.component';
 import { FooterComponent } from './footer.component';
 import { MessagesComponent } from './messages/messages.component';
-import { ModalComponent } from './modals/modal.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
 
 @NgModule({
@@ -24,7 +23,6 @@ import { RegisterFormComponent } from './register-form/register-form.component';
     ContactsComponent,
     FooterComponent,
     MessagesComponent,
-    ModalComponent,
 		RegisterFormComponent,
 
 		RemoveSpaces,

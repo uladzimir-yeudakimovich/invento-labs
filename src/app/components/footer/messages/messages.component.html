@@ -11,12 +11,10 @@
         </div>
     </div>
     <div *ngIf="messagesFromLocalStorage">
-        <div class="row message_items" *ngFor="let later of messagesFromLocalStorage; let i = index" (click)="showDetails(i)">
-            <p class="col-1">{{ later.name }}</p>
-            <p class="col-2 message_description">&nbsp;{{ later.message }}</p>
+        <div class="row message_items" *ngFor="let later of messagesFromLocalStorage; let i = index">
+            <p class="col-1">{{ userName }}</p>
+            <p class="col-2 message_description">&nbsp;{{ later }}</p>
             <span class="message_delete" (click)="delete(i)">&times;</span>
         </div>
     </div>
 </div>
-
-<app-modal *ngIf="messageToModal" [showMessage]="messageToModal"></app-modal>

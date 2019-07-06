@@ -1,8 +1,0 @@
-<div class="show-modal" *ngIf="showMessage">
-    <h5 class="swow-name">{{ showMessage.name }}</h5>
-    <textarea class="show-modal__textarea" [(ngModel)]="showMessage.message" rows="10"></textarea>
-    <div class="show-modal__buttons">
-        <button class="btn btn-update" (click)="updateMessage()">{{ 'buttons.update' | translate }}</button>
-        <button class="btn btn-close" (click)="closeMessage()">{{ 'buttons.close' | translate }}</button>
-    </div>
-</div>

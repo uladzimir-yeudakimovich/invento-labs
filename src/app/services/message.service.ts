@@ -11,6 +11,7 @@ export class MessageService {
 
   private url: string = 'assets/message.json';
   messagesFromLocalStorage: Array<object> = [];
+  userName: string;
 
   constructor(private http: HttpClient) { }
 
@@ -28,20 +29,36 @@ export class MessageService {
 
   getLocalMessages() {
     if (localStorage.getItem('messages')) {
-      this.messagesFromLocalStorage = JSON.parse(localStorage.getItem('messages'))['mess'];
+      this.messagesFromLocalStorage = JSON.parse(localStorage.getItem('messages'));
+    }
+  }
+
+  getUserName() {
+    if (localStorage.getItem('userInfo')) {
+      this.userName =  JSON.parse(localStorage.getItem('userInfo')).name;
+    } else {
+      this.messagesFromLocalStorage = [];
+      localStorage.setItem('messages', JSON.stringify([]));
     }
   }
 
   updateMessage(messages) {
     if (Number.isInteger(messages)) {
       this.messagesFromLocalStorage.splice(messages, 1);
-    } else if (messages.index + 1) {
-      this.messagesFromLocalStorage[messages.index]['message'] = messages['message'];
     } else {
-      this.messagesFromLocalStorage.push(messages);
+      if (messages.name !== '') {
+        localStorage.setItem('userInfo', JSON.stringify({
+          name: messages.name,
+          email: messages.email
+        }));
+      } else {
+        messages.name = JSON.parse(localStorage.getItem('userInfo')).name;
+        messages.email = JSON.parse(localStorage.getItem('userInfo')).email;
+      }
+      this.messagesFromLocalStorage.push(messages.message);
     }
 
-    const body = JSON.stringify({ mess: this.messagesFromLocalStorage });
+    const body = JSON.stringify(this.messagesFromLocalStorage);
     return localStorage.setItem('messages', body);
   }
 

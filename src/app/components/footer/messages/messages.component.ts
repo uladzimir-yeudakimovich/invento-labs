@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MessageService } from '../../../services/message.service';
 
 @Component({
@@ -10,14 +10,15 @@ export class MessagesComponent implements OnInit {
 
   messagesFromServer: Array<object>;
   messagesFromLocalStorage: Array<object>;
-  messageToModal: object;
-  @Output() clickChange;
+  userName: string;
 
   constructor(
     public messageService: MessageService
   ) { }
 
   ngOnInit(): void {
+    this.messageService.getUserName();
+    this.userName = this.messageService.userName;
     this.getMessages();
     this.getLocalMessages();
   }
@@ -41,10 +42,5 @@ export class MessagesComponent implements OnInit {
 
   delete(index) {
     this.messageService.updateMessage(index);
-  }
-
-  showDetails(index) {
-    this.messageToModal = this.messagesFromLocalStorage[index];
-    this.messageToModal['index'] = index;
   }
 }

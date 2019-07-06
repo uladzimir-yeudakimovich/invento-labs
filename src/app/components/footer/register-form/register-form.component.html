@@ -1,5 +1,6 @@
 <form class="footer__register-form" [formGroup]="createMessageForm" (ngSubmit)="onSubmit()">
   <input class="form-control"
+    *ngIf="fieldVisible"
     type="text"
     formControlName="name"
     placeholder="{{ 'footer.form.name' | translate }}"
@@ -10,6 +11,7 @@
   </div>
 
   <input class="form-control"
+    *ngIf="fieldVisible"
     type="text" formControlName="email"
     placeholder="{{ 'footer.form.email' | translate }}"
     [ngClass]="{ 'is-invalid': submitted && isRequired.email.errors }"

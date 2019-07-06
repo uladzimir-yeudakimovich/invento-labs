@@ -10,6 +10,7 @@ import { MessageService } from '../../../services/message.service';
 export class RegisterFormComponent implements OnInit {
   createMessageForm: FormGroup;
   submitted = false;
+  fieldVisible: boolean = true;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -17,13 +18,22 @@ export class RegisterFormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.createForm();
+    this.messageService.userName ? this.newMessageForm() : this.createRegisterForm();
   }
 
-  createForm() {
+  createRegisterForm() {
     this.createMessageForm = this.formBuilder.group({
       name: [ '', Validators.required ],
       email: [ '', [ Validators.required, Validators.email ] ],
+      message: [ '', [ Validators.required, Validators.minLength(2) ] ]
+    });
+  }
+
+  newMessageForm() {
+    this.fieldVisible = false;
+    this.createMessageForm = this.formBuilder.group({
+      name: [ '' ],
+      email: [ '' ],
       message: [ '', [ Validators.required, Validators.minLength(2) ] ]
     });
   }
@@ -37,7 +47,7 @@ export class RegisterFormComponent implements OnInit {
     }
     this.messageService.updateMessage(this.createMessageForm.value);
     this.submitted = false;
-    this.createForm();
+    this.newMessageForm();
   }
 
 }
