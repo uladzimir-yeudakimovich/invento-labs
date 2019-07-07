@@ -13,7 +13,7 @@
     <div *ngIf="messagesFromLocalStorage">
         <div class="row message_items" *ngFor="let later of messagesFromLocalStorage; let i = index">
             <p class="col-1">{{ userName }}</p>
-            <p class="col-2 message_description">&nbsp;{{ later }}</p>
+            <p class="col-2">&nbsp;{{ later }}</p>
             <span class="message_delete" (click)="delete(i)">&times;</span>
         </div>
     </div>

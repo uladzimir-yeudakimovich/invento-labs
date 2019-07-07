@@ -35,10 +35,10 @@ export class MessageService {
 
   getUserName() {
     if (localStorage.getItem('userInfo')) {
-      this.userName =  JSON.parse(localStorage.getItem('userInfo')).name;
+      this.userName = JSON.parse(localStorage.getItem('userInfo')).name;
     } else {
-      this.messagesFromLocalStorage = [];
-      localStorage.setItem('messages', JSON.stringify([]));
+      this.messagesFromLocalStorage.length = 0;
+      localStorage.setItem('messages', JSON.stringify(this.messagesFromLocalStorage));
     }
   }
 
@@ -46,14 +46,13 @@ export class MessageService {
     if (Number.isInteger(messages)) {
       this.messagesFromLocalStorage.splice(messages, 1);
     } else {
-      if (messages.name !== '') {
-        localStorage.setItem('userInfo', JSON.stringify({
+      if (messages.name) {
+        const userInfo = JSON.stringify({
           name: messages.name,
           email: messages.email
-        }));
-      } else {
-        messages.name = JSON.parse(localStorage.getItem('userInfo')).name;
-        messages.email = JSON.parse(localStorage.getItem('userInfo')).email;
+        });
+        this.userName = messages.name;
+        localStorage.setItem('userInfo', userInfo);
       }
       this.messagesFromLocalStorage.push(messages.message);
     }

@@ -17,9 +17,8 @@ export class MessagesComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.messageService.getUserName();
-    this.userName = this.messageService.userName;
     this.getMessages();
+    this.getUserName();
     this.getLocalMessages();
   }
 
@@ -33,6 +32,11 @@ export class MessagesComponent implements OnInit {
     // return this.messageService.getMessagesFromServer().subscribe(dataFromServer => {
     //   this.messagesFromServer = dataFromServer['mess'];
     // });
+  }
+
+  getUserName() {
+    this.messageService.getUserName();
+    this.userName = this.messageService.userName;
   }
 
   getLocalMessages() {
