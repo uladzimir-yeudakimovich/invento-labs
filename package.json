@@ -2,7 +2,7 @@
   "name": "portfolio",
   "version": "3.5.3",
   "scripts": {
-    "build": "ng build --prod --build-optimizer",
+    "build": "ng build --prod --build-optimizer --base-href https://uladzimir-yeudakimovich.github.io/",
     "e2e": "ng e2e",
     "ng": "ng",
     "lint": "ng lint",
