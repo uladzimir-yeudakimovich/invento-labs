@@ -41,14 +41,14 @@
 		"form": {
 			"name": "Enter name *",
 			"email": "Enter email *",
-			"message": "Enter message *"
+			"message": "Enter comment *"
 		},
 		"required": {
 			"name": "Name is required",
 			"email": "Email is required",
 			"validEmail": "Email must be a valid email address",
-			"message": "Message is required",
-			"validMessage": "Message must be at least 2 characters"
+			"message": "Comment is required",
+			"validMessage": "Comment must be at least 2 characters"
 		}
 	},
 
