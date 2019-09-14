@@ -1,10 +1,29 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
+import { HttpClient, HttpEvent, HttpInterceptor, HttpHandler, HttpRequest } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
-export class MessageService {
+export class MessageService implements HttpInterceptor {
+
+  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+
+    const userName = localStorage.getItem('userInfo') ? JSON.parse(localStorage.getItem('userInfo')).name : '?';
+
+    if (req.url.includes('assets/message.json')) {
+      const paramReq = req.clone({
+        params: req.params.set(
+          'userName',
+          userName
+        )
+      });
+      return next.handle(paramReq);
+    } else {
+      return next.handle(req);
+    }
+
+  }
 
   // TODO: 4000 port where node server is running
   private uri: string = 'http://localhost:4000';

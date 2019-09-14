@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -12,6 +12,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MainComponent } from './components/main/main.component';
 import { FooterModule } from './components/footer/footer.module';
+
+import { MessageService } from './services/message.service';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -39,7 +41,11 @@ export function createTranslateLoader(http: HttpClient) {
     HeaderComponent,
     MainComponent,
   ],
-  providers: [ ],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: MessageService,
+    multi: true
+  }],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
