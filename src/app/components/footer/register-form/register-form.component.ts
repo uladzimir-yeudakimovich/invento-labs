@@ -50,8 +50,11 @@ export class RegisterFormComponent implements OnInit {
     if (!this.createMessageForm.value.name) {
       this.createMessageForm.value.name = JSON.parse(localStorage.getItem('userInfo')).name;
       this.createMessageForm.value.email = JSON.parse(localStorage.getItem('userInfo')).email;
+    } else {
+      // bed code, fix me
+      window.location.reload();
     }
-    dataLayer.push({
+    (<any>window).dataLayer.push({
       eventCategory: "submit",
       eventLabel: "click",
       eventAction: "userMessage",

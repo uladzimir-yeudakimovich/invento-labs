@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
     this.isEnglish = !this.isEnglish;
     this.translate.use(language);
     this.localLanguage.setLanguage(language);
-    dataLayer.push({
+    (<any>window).dataLayer.push({
       eventCategory: "changeLanguage",
       eventLabel: "click",
       eventAction: "userLanguage",

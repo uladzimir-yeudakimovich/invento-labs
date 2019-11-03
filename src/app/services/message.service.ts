@@ -9,13 +9,13 @@ export class MessageService implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-    // const userName = localStorage.getItem('userInfo') ? JSON.parse(localStorage.getItem('userInfo')).name : '?';
+    const userName = localStorage.getItem('userInfo') ? JSON.parse(localStorage.getItem('userInfo')).name : '?';
 
     if (req.url.includes('assets/message.json')) {
       const paramReq = req.clone({
         params: req.params.set(
           'userName',
-          "123" // userName
+          userName
         )
       });
       return next.handle(paramReq);
@@ -29,8 +29,8 @@ export class MessageService implements HttpInterceptor {
   private uri: string = 'http://localhost:4000';
 
   private url: string = 'assets/message.json';
-  userName: string = "";
   messagesFromLocalStorage: Array<object> = [];
+  userName: string = "";
 
   constructor(private http: HttpClient) { }
 
@@ -56,7 +56,7 @@ export class MessageService implements HttpInterceptor {
     if (localStorage.getItem('userInfo')) {
       this.userName = JSON.parse(localStorage.getItem('userInfo')).name;
     } else {
-      this.messagesFromLocalStorage.length = 0;
+      this.messagesFromLocalStorage = [];
       localStorage.setItem('messages', JSON.stringify(this.messagesFromLocalStorage));
     }
   }
@@ -65,19 +65,15 @@ export class MessageService implements HttpInterceptor {
     if (Number.isInteger(messages)) {
       this.messagesFromLocalStorage.splice(messages, 1);
     } else {
+      this.messagesFromLocalStorage.push(messages.message);
       if (messages.name) {
         this.userName = messages.name;
-        const userInfo = JSON.stringify({
-          name: messages.name,
-          email: messages.email
-        });
-        localStorage.setItem('userInfo', userInfo);
+        delete messages.message;
+        localStorage.setItem('userInfo', JSON.stringify(messages));
       }
-      this.messagesFromLocalStorage.push(messages.message);
     }
 
-    const body = JSON.stringify(this.messagesFromLocalStorage);
-    localStorage.setItem('messages', body);
+    localStorage.setItem('messages', JSON.stringify(this.messagesFromLocalStorage));
   }
 
 }
