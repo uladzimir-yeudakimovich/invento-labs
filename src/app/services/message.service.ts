@@ -9,13 +9,13 @@ export class MessageService implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-    const userName = localStorage.getItem('userInfo') ? JSON.parse(localStorage.getItem('userInfo')).name : '?';
+    // const userName = localStorage.getItem('userInfo') ? JSON.parse(localStorage.getItem('userInfo')).name : '?';
 
     if (req.url.includes('assets/message.json')) {
       const paramReq = req.clone({
         params: req.params.set(
           'userName',
-          userName
+          "123" // userName
         )
       });
       return next.handle(paramReq);
@@ -29,8 +29,8 @@ export class MessageService implements HttpInterceptor {
   private uri: string = 'http://localhost:4000';
 
   private url: string = 'assets/message.json';
+  userName: string = "";
   messagesFromLocalStorage: Array<object> = [];
-  userName: string;
 
   constructor(private http: HttpClient) { }
 
@@ -66,18 +66,18 @@ export class MessageService implements HttpInterceptor {
       this.messagesFromLocalStorage.splice(messages, 1);
     } else {
       if (messages.name) {
+        this.userName = messages.name;
         const userInfo = JSON.stringify({
           name: messages.name,
           email: messages.email
         });
-        this.userName = messages.name;
         localStorage.setItem('userInfo', userInfo);
       }
       this.messagesFromLocalStorage.push(messages.message);
     }
 
     const body = JSON.stringify(this.messagesFromLocalStorage);
-    return localStorage.setItem('messages', body);
+    localStorage.setItem('messages', body);
   }
 
 }
