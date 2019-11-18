@@ -1,5 +1,5 @@
 const webdriver = require('selenium-webdriver');
-var browser = new webdriver.Builder().usingServer().withCapabilities({'browserName': 'chrome' }).build();
+const browser = new webdriver.Builder().usingServer().withCapabilities({'browserName': 'chrome' }).build();
 browser.get('https://uladzimir-yeudakimovich.github.io/');
 
 const messagesRoutes = require('./routes/messages.route');
