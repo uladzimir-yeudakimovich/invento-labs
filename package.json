@@ -8,7 +8,8 @@
     "lint": "ng lint",
     "start": "ng serve",
     "server": "node server.js",
-    "test": "ng test"
+    "test": "ng test",
+    "selenium": "node selenium.js"
   },
   "private": true,
   "dependencies": {
