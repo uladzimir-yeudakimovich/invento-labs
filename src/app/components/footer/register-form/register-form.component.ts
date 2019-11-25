@@ -46,6 +46,7 @@ export class RegisterFormComponent implements OnInit {
       return;
     }
     this.messageService.updateMessage(this.createMessageForm.value);
+    // this.messageService.saveMessagesToServer(this.createMessageForm.value);
     this.submitted = false;
     if (!this.createMessageForm.value.name) {
       this.createMessageForm.value.name = JSON.parse(localStorage.getItem('userInfo')).name;

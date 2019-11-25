@@ -39,7 +39,11 @@ export class MessageService implements HttpInterceptor {
   }
 
   saveMessagesToServer(data) {
-    return this.http.post(this.uri, data);
+    this.getMessagesFromServer().subscribe(dataFromServer => {
+      let allMess = dataFromServer['mess'];
+      allMess.push(data);
+      return this.http.post(this.uri, { 'mess': allMess });
+    }); 
   }
 
   getMessages() {
