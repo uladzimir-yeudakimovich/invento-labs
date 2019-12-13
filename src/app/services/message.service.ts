@@ -8,10 +8,9 @@ import { HttpClient, HttpEvent, HttpInterceptor, HttpHandler, HttpRequest } from
 export class MessageService implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-
     const userName = localStorage.getItem('userInfo') ? JSON.parse(localStorage.getItem('userInfo')).name : '?';
 
-    if (req.url.includes('assets/message.json')) {
+    if (req.url.includes('http://localhost:4000/')) {
       const paramReq = req.clone({
         params: req.params.set(
           'userName',
@@ -22,12 +21,9 @@ export class MessageService implements HttpInterceptor {
     } else {
       return next.handle(req);
     }
-
   }
 
-  // TODO: 4000 port where node server is running
-  private uri: string = 'http://localhost:4000';
-
+  private uri: string = 'http://localhost:4000/';
   private url: string = 'assets/message.json';
   messagesFromLocalStorage: Array<object> = [];
   userName: string = "";
@@ -42,7 +38,7 @@ export class MessageService implements HttpInterceptor {
     this.getMessagesFromServer().subscribe(dataFromServer => {
       let allMess = dataFromServer['mess'];
       allMess.push(data);
-      return this.http.post(this.uri, JSON.stringify({ 'mess': allMess }));
+      return this.http.post(this.uri, { 'mess': allMess }).subscribe();
     });
   }
 

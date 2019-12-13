@@ -7,7 +7,7 @@
     "ng": "ng",
     "lint": "ng lint",
     "start": "ng serve",
-    "server": "node server.js",
+    "server": "nodemon server.js",
     "test": "ng test",
     "selenium": "node selenium.js"
   },
@@ -62,6 +62,7 @@
     "karma-coverage-istanbul-reporter": "^2.1.1",
     "karma-jasmine": "^2.0.1",
     "karma-jasmine-html-reporter": "^1.4.2",
+    "nodemon": "^2.0.1",
     "protractor": "^5.4.2",
     "ts-node": "^8.5.2",
     "tslint": "^5.20.1",
