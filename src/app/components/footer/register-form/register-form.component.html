@@ -1,36 +1,49 @@
-<form class="footer__register-form" [formGroup]="createMessageForm" (ngSubmit)="onSubmit()">
-  <input class="form-control"
-    *ngIf="fieldVisible"
+<form
+  class="footer__register-form"
+  [formGroup]="createMessageForm"
+  (ngSubmit)="onSubmit()">
+  <input
+    class="form-control"
     type="text"
     formControlName="name"
     placeholder="{{ 'footer.form.name' | translate }}"
-    [ngClass]="{ 'is-invalid': submitted && isRequired.name.errors }"
+    [ngClass]="{ 'is-invalid': !isRequired.name.valid && isRequired.name.touched }"
     aria-label="name"/>
-  <div class="invalid-feedback" *ngIf="submitted && isRequired.name.errors">
-    <div *ngIf="isRequired.name.errors.required">{{ 'footer.required.name' | translate }}</div>
-  </div>
+  <span
+    class="invalid-feedback"
+    *ngIf="!isRequired.name.valid && isRequired.name.touched">
+    <span *ngIf="isRequired.name.errors.required">{{ 'footer.required.name' | translate }}</span>
+  </span>
 
-  <input class="form-control"
-    *ngIf="fieldVisible"
+  <input
+    class="form-control"
     type="text" formControlName="email"
     placeholder="{{ 'footer.form.email' | translate }}"
-    [ngClass]="{ 'is-invalid': submitted && isRequired.email.errors }"
+    [ngClass]="{ 'is-invalid': !isRequired.email.valid && isRequired.email.touched }"
     aria-label="email"/>
-  <div class="invalid-feedback" *ngIf="submitted && isRequired.email.errors">
-    <div *ngIf="isRequired.email.errors.required">{{ 'footer.required.email' | translate }}</div>
-    <div *ngIf="isRequired.email.errors.email">{{ 'footer.required.validEmail' | translate }}</div>
-  </div>
+  <span
+    class="invalid-feedback"
+    *ngIf="!isRequired.email.valid && isRequired.email.touched">
+    <span *ngIf="isRequired.email.errors.required">{{ 'footer.required.email' | translate }}</span>
+    <span *ngIf="isRequired.email.errors.email">{{ 'footer.required.validEmail' | translate }}</span>
+  </span>
   
-  <textarea class="form-control form-control_message"
+  <textarea
+    class="form-control form-control_message"
     type="text"
     formControlName="message"
     placeholder="{{ 'footer.form.message' | translate }}"
-    [ngClass]="{ 'is-invalid': submitted && isRequired.message.errors }"
+    [ngClass]="{ 'is-invalid': !isRequired.message.valid && isRequired.message.touched }"
     aria-label="message">
   </textarea>
-  <div class="invalid-feedback" *ngIf="submitted && isRequired.message.errors">
-    <div *ngIf="isRequired.message.errors.required">{{ 'footer.required.message' | translate }}</div>
-    <div *ngIf="isRequired.message.errors.minlength">{{ 'footer.required.validMessage' | translate }}</div>
-  </div>
-  <button class="btn-submit">{{ 'buttons.submit' | translate }}</button>
+  <span
+    class="invalid-feedback"
+    *ngIf="!isRequired.message.valid && isRequired.message.touched">
+    <span *ngIf="isRequired.message.errors.required">{{ 'footer.required.message' | translate }}</span>
+    <span *ngIf="isRequired.message.errors.minlength">{{ 'footer.required.validMessage' | translate }}</span>
+  </span>
+
+  <button
+    class="btn-submit"
+    [disabled]="!createMessageForm.valid">{{ 'buttons.submit' | translate }}</button>
 </form>

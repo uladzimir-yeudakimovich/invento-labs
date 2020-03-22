@@ -1,20 +1,18 @@
 <div class="messages">
-    <h4 class="message_title">{{ 'footer.message.comments' | translate }}</h4>
-    <div class="row message_items">
-        <h5 class="col-1">{{ 'footer.message.name' | translate }}</h5>
-        <h5 class="col-2">{{ 'footer.message.messages' | translate }}</h5>
+  <h4 class="message_title">{{ 'footer.message.comments' | translate }}</h4>
+  <div class="row message_items">
+    <h5 class="col-1">{{ 'footer.message.name' | translate }}</h5>
+    <h5 class="col-2">{{ 'footer.message.messages' | translate }}</h5>
+  </div>
+  <div *ngIf="messagesFromServer">
+    <div class="row message_items" *ngFor="let later of messagesFromServer">
+      <p class="col-1">{{ later.name }}</p>
+      <p class="col-2">&nbsp;{{ later.message | translate }}</p>
     </div>
-    <div *ngIf="messagesFromServer">
-        <div class="row message_items" *ngFor="let later of messagesFromServer">
-            <p class="col-1">{{ later.name }}</p>
-            <p class="col-2">&nbsp;{{ later.message | translate }}</p>
-        </div>
-    </div>
-    <div *ngIf="messagesFromLocalStorage && userName">
-        <div class="row message_items" *ngFor="let later of messagesFromLocalStorage; let i = index">
-            <p class="col-1">{{ userName }}</p>
-            <p class="col-2">&nbsp;{{ later }}</p>
-            <span class="message_delete" (click)="delete(i)">&times;</span>
-        </div>
-    </div>
+  </div>
+  <div class="row message_items" *ngFor="let later of messagesFromLocalStorage; let i = index">
+    <p class="col-1">{{ userName }}</p>
+    <p class="col-2">&nbsp;{{ later }}</p>
+    <span class="message_delete" (click)="delete(i)">&times;</span>
+  </div>
 </div>

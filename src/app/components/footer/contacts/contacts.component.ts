@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { HttpClient, HttpRequest } from '@angular/common/http';
 
 @Component({
   selector: 'app-contacts',
@@ -9,6 +8,7 @@ import { HttpClient, HttpRequest } from '@angular/common/http';
 export class ContactsComponent {
   contacts = [
     {icon: 'lt-icon-phone', link: 'tel:+375333344201', name: '+375333344201'},
+    {icon: 'lt-icon-skype', link: 'skype:live:be52441aa4a87669?chat', name: 'live:be52441aa4a87669'},
     {icon: 'lt-icon-envelope', link: 'mailto:uladzimir.yeudakimovich@gmail.com', name: 'uladzimir.yeudakimovich@gmail.com'},
     {icon: 'lt-icon-cloud', link: 'assets/CV_Евдокимович Владимир.pdf', name: 'footer.cvRussian', option: 'download'},
     {icon: 'lt-icon-cloud', link: 'assets/CV_Uladzimir Yeudakimovich.pdf', name: 'footer.cvEnglish', option: 'download'},
@@ -20,10 +20,7 @@ export class ContactsComponent {
     {icon: 'lt-icon-students-cap', link: 'https://www.duolingo.com/91YN1', name: 'Duolingo'},
   ];
 
-  constructor(private httpClient: HttpClient) { }
+  constructor() { }
 
-  ngOnInit() {
-    const req = new HttpRequest('PUT', 'https://portfolio-57f5d.firebaseapp.com/contacts.json', this.contacts, {reportProgress: true});
-    return this.httpClient.request(req);
-  }
+  ngOnInit() { }
 }
