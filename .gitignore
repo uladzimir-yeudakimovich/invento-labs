@@ -1,4 +1,3 @@
 node_modules
 dist
 chromedriver.exe
-src/environments

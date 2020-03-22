@@ -23,15 +23,9 @@
 	
 	"footer": {
 		"name": "Контактная информация",
-		"phone": "+375 33 3344201",
-		"email": "uladzimir.yeudakimovich@gmail.com",
 		"cvRussian": "резюме на русском",
 		"cvEnglish": "резюме на английском",
 		"subname": "Ссылки на мои социальные сети:",
-		"linkedin": "Linkedin",
-		"github": "Github",
-		"codewars": "CodeWars",
-		"duolingo": "Duolingo",
 		"message": {
 			"comments": "Комментарии",
 			"name": "Имя",

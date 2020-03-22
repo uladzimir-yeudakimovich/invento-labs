@@ -1,40 +1,17 @@
 <section>
   <h4 class="contacts_title">{{ 'footer.name' | translate }}</h4>
-  <ul class="contacts_items">
+  <ul class="contacts_items" *ngFor="let contact of contacts">
     <li class="contact-item">
-      <i class="lt-icon-phone"></i>
-      <a class="contact-link" href="tel:{{ 'footer.phone' | translate | removeSpaces }}">{{ 'footer.phone' | translate }}</a>
-    </li>
-    <li class="contact-item">
-      <i class="lt-icon-envelope"></i>
-      <a class="contact-link" href="mailto:{{ 'footer.email' | translate }}">{{ 'footer.email' | translate }}</a>
-    </li>
-    <li class="contact-item">
-      <i class="lt-icon-cloud"></i>
-      <a class="contact-link" href="assets/CV_Евдокимович Владимир.pdf" download>{{ 'footer.cvRussian' | translate }}</a>
-    </li>
-    <li class="contact-item">
-      <i class="lt-icon-cloud"></i>
-      <a class="contact-link" href="assets/CV_Uladzimir Yeudakimovich.pdf" download>{{ 'footer.cvEnglish' | translate }}</a>
+      <i class="{{ contact.icon }}"></i>
+      <a *ngIf="contact.option" class="contact-link" href="{{ contact.link }}" download>{{ contact.name | translate }}</a>
+      <a *ngIf="!contact.option" class="contact-link" href="{{ contact.link }}">{{ contact.name | translate }}</a>
     </li>
   </ul>
   <h4 class="contacts_title">{{ 'footer.subname' | translate }}</h4>
-  <ul class="contacts_items">
+  <ul class="contacts_items" *ngFor="let network of socialNetworks">
     <li class="contact-item">
-      <i class="lt-icon-linkedin"></i>
-      <a class="contact-link" href="https://www.linkedin.com/in/uladzimir-yeudakimovich" target="_blank" rel="noopener">{{ 'footer.linkedin' | translate }}</a>
-    </li>
-    <li class="contact-item">
-      <i class="lt-icon-github"></i>
-      <a class="contact-link" href="https://github.com/uladzimir-yeudakimovich" target="_blank" rel="noopener">{{ 'footer.github' | translate }}</a>
-    </li>
-    <li class="contact-item">
-      <i class="lt-icon-codewars"></i>
-      <a class="contact-link" href="https://www.codewars.com/users/uladzimir.yeudakimovich" target="_blank" rel="noopener">{{ 'footer.codewars' | translate }}</a>
-    </li>
-    <li class="contact-item">
-      <i class="lt-icon-students-cap"></i>
-      <a class="contact-link" href="https://www.duolingo.com/91YN1" target="_blank" rel="noopener">{{ 'footer.duolingo' | translate }}</a>
+      <i class="{{ network.icon }}"></i>
+      <a class="contact-link" href="{{ network.link }}" target="_blank" rel="noopener">{{ network.name }}</a>
     </li>
   </ul>
 </section>
