@@ -8,8 +8,7 @@ import { DataService } from '../../services/data.service';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-
-  data: any;
+  data: Array<object> = [];
   customOptions: OwlOptions = {
     items: 1,
     loop: true,
@@ -21,8 +20,9 @@ export class MainComponent implements OnInit {
   constructor(public dataService: DataService) { }
 
   ngOnInit() {
-    this.dataService.getData().subscribe(dataFromServer => {
-      this.data = dataFromServer;
-    });
+    this.dataService.getData()
+      .subscribe(
+        (dataFromServer: Array<object>) => this.data = dataFromServer
+      );
   }
 }

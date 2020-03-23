@@ -5,11 +5,9 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class DataService {
-
   constructor(private http: HttpClient) { }
 
   getData() {
-    return this.http.get('assets/data.json');
+    return this.http.get('https://portfolio-57f5d.firebaseio.com/data.json');
   }
-
 }
