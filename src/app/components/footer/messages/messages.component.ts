@@ -8,38 +8,19 @@ import { MessageService } from '../../../services/message.service';
   styleUrls: ['./messages.component.scss']
 })
 export class MessagesComponent implements OnInit {
-  messagesFromServer: Array<object>;
-  messagesFromLocalStorage: Array<object>;
-  userName: string;
+  messages: Array<object>;
 
   constructor(public messageService: MessageService) { }
 
-  ngOnInit(): void {
-    this.getMessages();
-    this.getUserName();
-    this.getLocalMessages();
-  }
-
-  getMessages() {
-    return this.messageService.getMessages().subscribe(dataFromServer => {
-      this.messagesFromServer = dataFromServer['mess'];
-    });
-
-    // TODO: where node server is running
-
-    // return this.messageService.getMessagesFromServer().subscribe(dataFromServer => {
-    //   this.messagesFromServer = dataFromServer['mess'];
-    // });
-  }
-
-  getUserName() {
-    this.messageService.getUserName();
-    this.userName = this.messageService.userName;
-  }
-
-  getLocalMessages() {
-    this.messageService.getLocalMessages();
-    this.messagesFromLocalStorage = this.messageService.messagesFromLocalStorage;
+  ngOnInit() {
+    this.messageService.getMessages()
+      .subscribe(
+        (messages: Array<object>) => {
+          this.messages = messages;
+          this.messageService.messages = messages;
+        },
+        (error) => console.log(error)
+      );
   }
 
   delete(index) {
