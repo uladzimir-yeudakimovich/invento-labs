@@ -1,10 +1,11 @@
 {
   "short_name": "Portfolio",
   "name": "Uladzimir Yeudakimovich",
-  "start_url": "https://uladzimir-yeudakimovich.github.io",
-  "background_color": "#3367D6",
   "theme_color": "#3a3842",
+  "background_color": "#3367D6",
   "display": "standalone",
+  "scope": "./",
+  "start_url": "https://uladzimir-yeudakimovich.github.io",
   "icons": [
     {
      "src": "assets/icons\/android-icon-36x36.png",
