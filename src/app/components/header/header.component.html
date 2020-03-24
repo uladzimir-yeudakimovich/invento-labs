@@ -13,22 +13,18 @@
     </figure>
     <div class="header__description">
       <h4 class="header__description-title">{{ 'header.education.title' | translate }}</h4>
-      <ul>
-        <li>{{ 'header.education.harvard' | translate }}</li>
-        <li>{{ 'header.education.rolling' | translate }}</li>
-        <li>{{ 'header.education.udemy' | translate }}</li>
+      <ul *ngFor="let item of education">
+        <li>{{ item.name | translate }}</li>
       </ul>
       <h4 class="header__description-title">{{ 'header.experience.title' | translate }}</h4>
-      <ul>
-        <li>{{ 'header.experience.freelance' | translate }}</li>
-        <li>{{ 'header.experience.ocsico' | translate }}</li>
-        <li>{{ 'header.experience.lifetech' | translate }}</li>
+      <ul *ngFor="let item of experience">
+        <li>{{ item.name | translate }}</li>
       </ul>
       <h4 class="header__description-title">{{ 'header.technology.title' | translate }}</h4>
-      <ul *ngFor="let my of data">
-        <li class="technology_level">{{ my.technology }}
+      <ul *ngFor="let item of technology">
+        <li class="technology_level">{{ item.technology }}
           <div>
-            <i *ngFor="let star of my.level" class="lt-icon-star"></i>
+            <i *ngFor="let star of item.level" class="lt-icon-star"></i>
           </div>
         </li>
       </ul>

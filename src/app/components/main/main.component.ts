@@ -20,9 +20,9 @@ export class MainComponent implements OnInit {
   constructor(public dataService: DataService) { }
 
   ngOnInit() {
-    this.dataService.getData()
+    this.dataService.getProjects()
       .subscribe(
-        (dataFromServer: Array<object>) => this.data = dataFromServer
+        (response: Array<object>) => this.data = response
       );
   }
 }
