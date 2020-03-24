@@ -1,6 +1,10 @@
 <div class="languages">
-    <button class="change-language {{ isEnglish ? 'change-language_unactive' : 'change-language_active' }}" (click)="switchLanguage('en')">En</button>
-    <button class="change-language {{ isEnglish ? 'change-language_active' : 'change-language_unactive' }}" (click)="switchLanguage('ru')">Ru</button>
+  <button 
+    class="change-language {{ isEnglish ? 'change-language_unactive' : 'change-language_active' }}" 
+    (click)="switchLanguage('en')">En</button>
+  <button 
+    class="change-language {{ isEnglish ? 'change-language_active' : 'change-language_unactive' }}" 
+    (click)="switchLanguage('ru')">Ru</button>
 </div>
 
 <app-header></app-header>
