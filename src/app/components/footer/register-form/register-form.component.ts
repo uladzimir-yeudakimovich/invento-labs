@@ -24,7 +24,10 @@ export class RegisterFormComponent implements OnInit {
   get isRequired() { return this.createMessageForm.controls; }
 
   onSubmit() {
-    this.messageService.updateMessage(this.createMessageForm.value);
+    this.messageService.updateMessage(this.createMessageForm.value).subscribe(
+      (response) => console.log(response),
+      (error) => console.log(error)
+    );
     this.createMessageForm.reset();
 
     (<any>window).dataLayer.push({
