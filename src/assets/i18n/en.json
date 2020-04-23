@@ -6,9 +6,10 @@
 		"name": "Uladzimir Yeudakimovich",
 		"education": {
 			"title": "Education",
-			"harvard": "Harvard University. Course CS50: Introduction to Computer Science. 2017",
-			"rolling": "Rolling Scopes School. Front-end development. 2017-2018",
-			"udemy": "Udemy. Angular 7 course. 2018"
+			"harvard": "Harvard University. Course CS50: Introduction to Computer Science, 2017",
+			"rolling-fe": "Rolling Scopes School. Front-end development, 2017-2018",
+			"udemy": "Udemy. Angular 7 course, 2018-2019",
+			"rolling-node": "Rolling Scopes School. NodeJS development, 2020"
 		},
 		"experience": {
 			"title": "Experience",
