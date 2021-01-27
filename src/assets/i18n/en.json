@@ -5,17 +5,10 @@
 		"position": "Software Engineer",
 		"name": "Uladzimir Yeudakimovich",
 		"education": {
-			"title": "Education",
-			"harvard": "Harvard University. Course CS50: Introduction to Computer Science, 2017",
-			"rolling-fe": "Rolling Scopes School. Front-end development, 2017-2018",
-			"udemy": "Udemy. Angular 7 course, 2018-2019",
-			"rolling-node": "Rolling Scopes School. NodeJS development, 2020"
+			"title": "Education"
 		},
 		"experience": {
-			"title": "Experience",
-			"freelance": "September 2017 – August 2018, Software Engineer, Freelance Web Development, Minsk",
-			"ocsico": "August 2018 – February 2019, Software Engineer, OCS Innovation Company (OCSICO®), Minsk",
-			"lifetech": "February 2019 – Present, Software Engineer, lifetech (Turkcell Group), Minsk"
+			"title": "Experience"
 		},
 		"technology": {
 			"title": "Technology"
@@ -24,8 +17,7 @@
 
 	"footer": {
 		"name": "Contact Information",
-		"cvRussian": "CV in russian",
-		"cvEnglish": "CV in english",
+		"cv": "Download CV",
 		"subname": "Links to my social networks:",
 		"message": {
 			"comments": "Comments",

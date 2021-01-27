@@ -1,0 +1,8 @@
+<div class="languages">
+  <button 
+    class="change-language {{ isEnglish ? 'unactive' : 'active' }}" 
+    (click)="switchLanguage('en')">En</button>
+  <button 
+    class="change-language {{ isEnglish ? 'active' : 'unactive' }}" 
+    (click)="switchLanguage('ru')">Ru</button>
+</div>

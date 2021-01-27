@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
+import { LanguageService } from '../../services/language.servise';
 
 @Component({
   selector: 'app-header',
@@ -7,20 +8,20 @@ import { DataService } from '../../services/data.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  education: Array<object> = [];
-  experience: Array<object> = [];
-  technology: Array<object> = [];
+  public education: Array<object> = [];
+  public experience: Array<object> = [];
+  public technology: Array<object> = [];
 
-  constructor(public dataService: DataService) { }
+  constructor(public dataService: DataService, public languageService: LanguageService) { }
 
   ngOnInit() {
-    this.dataService.getInformation()
-      .subscribe(
-        (response: any) => {
-          this.education = response.education;
-          this.experience = response.experience;
-          this.technology = response.technology;
-        }
-      );
+    this.dataService.getInformation().subscribe((response: any) => {
+      this.technology = response.technology;
+
+      this.languageService.currentLang.subscribe(lang => {
+        this.education = response.education.map(el => el[lang]);
+        this.experience = response.experience.map(el => el[lang]);
+      });
+    });
   }
 }

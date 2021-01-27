@@ -1,3 +1,4 @@
+<change-language></change-language>
 <header class="header">
   <figure class="container header__laptop">
     <img class="rectangle" src="assets/images/logo_laptop.jpg" alt="logo_laptop">
@@ -14,11 +15,11 @@
     <div class="header__description">
       <h4 class="header__description-title">{{ 'header.education.title' | translate }}</h4>
       <ul *ngFor="let item of education">
-        <li>{{ item.name | translate }}</li>
+        <li>{{ item | translate }}</li>
       </ul>
       <h4 class="header__description-title">{{ 'header.experience.title' | translate }}</h4>
       <ul *ngFor="let item of experience">
-        <li>{{ item.name | translate }}</li>
+        <li>{{ item | translate }}</li>
       </ul>
       <h4 class="header__description-title">{{ 'header.technology.title' | translate }}</h4>
       <ul *ngFor="let item of technology">

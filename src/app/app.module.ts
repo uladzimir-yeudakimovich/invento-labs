@@ -10,6 +10,7 @@ import { MaterialModule } from './material.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { AppComponent } from './app.component';
+import { ChangeLanguageComponent } from './components/header/change-language/change-language';
 import { HeaderComponent } from './components/header/header.component';
 import { MainComponent } from './components/main/main.component';
 import { FooterModule } from './components/footer/footer.module';
@@ -39,6 +40,7 @@ export function createTranslateLoader(http: HttpClient) {
   ],
   declarations: [
     AppComponent,
+    ChangeLanguageComponent,
     HeaderComponent,
     MainComponent,
   ],

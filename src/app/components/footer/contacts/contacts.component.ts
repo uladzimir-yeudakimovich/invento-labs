@@ -7,11 +7,10 @@ import { Component } from '@angular/core';
 })
 export class ContactsComponent {
   contacts = [
-    {icon: 'lt-icon-phone', link: 'tel:+375333344201', name: '+375333344201'},
+    {icon: 'lt-icon-phone', link: 'tel:+48884603351', name: '+48 884 603 351'},
     {icon: 'lt-icon-skype', link: 'skype:live:be52441aa4a87669?chat', name: 'live:be52441aa4a87669'},
     {icon: 'lt-icon-envelope', link: 'mailto:uladzimir.yeudakimovich@gmail.com', name: 'uladzimir.yeudakimovich@gmail.com'},
-    {icon: 'lt-icon-cloud', link: 'assets/CV_Евдокимович Владимир.pdf', name: 'footer.cvRussian', option: 'download'},
-    {icon: 'lt-icon-cloud', link: 'assets/CV_Uladzimir Yeudakimovich.pdf', name: 'footer.cvEnglish', option: 'download'},
+    {icon: 'lt-icon-cloud', link: 'assets/CV_Uladzimir Yeudakimovich.pdf', name: 'footer.cv', option: 'download'},
   ];
   socialNetworks = [
     {icon: 'lt-icon-linkedin', link: 'https://www.linkedin.com/in/uladzimir-yeudakimovich', name: 'Linkedin'},
