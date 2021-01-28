@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -19,6 +20,12 @@ import { environment } from '../environments/environment';
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
 }
+
+const appRoutes: Routes = [
+  { path: '',  component: null }
+];
+
+export const yourRouting = RouterModule.forChild(appRoutes);
 
 @NgModule({
   imports: [
