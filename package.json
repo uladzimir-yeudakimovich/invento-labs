@@ -35,7 +35,7 @@
     "hammerjs": "^2.0.8",
     "karma-cli": "^2.0.0",
     "ngx-owl-carousel-o": "5.0.0",
-    "rxjs": "^6.5.4",
+    "rxjs": "^6.6.3",
     "selenium-webdriver": "^4.0.0-alpha.7",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

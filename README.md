@@ -4,7 +4,7 @@
 
 # <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fuladzimir-yeudakimovich.github.io%2F">validity</a>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.14.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.1.
 
 ## Development server
 
