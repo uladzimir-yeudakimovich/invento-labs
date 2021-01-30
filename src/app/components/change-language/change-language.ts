@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
-import { LanguageService } from '../../../services/language.servise';
+import { LanguageService } from '../../services/language.servise';
 
 @Component({
   selector: 'change-language',

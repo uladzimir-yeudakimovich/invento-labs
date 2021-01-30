@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -10,8 +9,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ChangeLanguageComponent } from './components/header/change-language/change-language';
+import { ChangeLanguageComponent } from './components/change-language/change-language';
 import { HeaderComponent } from './components/header/header.component';
 import { MainComponent } from './components/main/main.component';
 import { FooterModule } from './components/footer/footer.module';
@@ -20,12 +20,6 @@ import { environment } from '../environments/environment';
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
 }
-
-const appRoutes: Routes = [
-  { path: '',  component: null }
-];
-
-export const yourRouting = RouterModule.forChild(appRoutes);
 
 @NgModule({
   imports: [
@@ -42,6 +36,7 @@ export const yourRouting = RouterModule.forChild(appRoutes);
     CarouselModule,
     BrowserAnimationsModule,
     MaterialModule,
+    AppRoutingModule,
     FooterModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],

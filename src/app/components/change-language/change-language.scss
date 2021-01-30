@@ -1,15 +1,7 @@
-@import "../../../styles/colors.scss";
+@import "../../styles/colors.scss";
 
 .languages {
-	position: fixed;
-	height: 50px;
 	width: 100%;
-	background-color: $header-background;
-	background-image: url(../../../../assets/images/social_icons/bg-contours.svg);
-	z-index: 20;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 
 .change-language {
