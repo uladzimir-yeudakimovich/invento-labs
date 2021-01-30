@@ -1,5 +1,6 @@
 import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,15 +9,27 @@ import { ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
 })
 export class AppComponent implements OnDestroy {
   mobileQuery: MediaQueryList;
-
-  fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
+  title: string;
 
   private _mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  constructor(
+    changeDetectorRef: ChangeDetectorRef,
+    media: MediaMatcher,
+    private router: Router
+  ) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
+  }
+
+  ngOnInit() {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        const name = event.url.replace('/', '');
+        this.title = name.charAt(0).toUpperCase() + name.slice(1);
+      }
+    });
   }
 
   ngOnDestroy(): void {

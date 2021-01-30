@@ -9,25 +9,26 @@ import { LanguageService } from '../../services/language.servise';
   styleUrls: ['./change-language.scss']
 })
 export class ChangeLanguageComponent implements OnInit {
-  public isEnglish: boolean;
+  language: string;
 
   constructor(private translate: TranslateService, public languageService: LanguageService) { }
 
   ngOnInit() {
     this.languageService.currentLang.subscribe(lang => {
       this.translate.setDefaultLang(lang);
-      this.isEnglish = lang === 'en';
+      this.language = lang;
     });
   }
 
-  switchLanguage(language: string): void {
-    this.languageService.setLanguage(language);
+  switchLanguage(event): void {
+    this.language = event.target.value;
+    this.languageService.setLanguage(this.language);
 
     (<any>window).dataLayer.push({
       eventCategory: "changeLanguage",
       eventLabel: "click",
       eventAction: "userLanguage",
-      eventValue: language
+      eventValue: this.language
     });
   }
 }

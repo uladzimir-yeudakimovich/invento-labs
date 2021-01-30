@@ -1,10 +1,9 @@
 @import "../../styles/colors.scss";
 
 .footer {
+  height: 100%;
   background-color: $footer-background;
   background-image: url(/assets/images/social_icons/bg-contours.svg);
-  margin-top: 50px;
-  padding: 15px calc(15px + 1%);
 }
 
 .footer_information {

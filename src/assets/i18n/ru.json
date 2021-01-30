@@ -1,5 +1,8 @@
 {
-	"title": "Проекты",
+	"Home": "Дом",
+	"Projects": "Проекты",
+	"Contacts": "Контакты",
+	"Feedback": "Отзывы",
 	
 	"header": {
 		"position": "Инженер программист",

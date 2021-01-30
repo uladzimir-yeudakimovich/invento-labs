@@ -1,8 +1,5 @@
-<div class="languages">
-  <button 
-    class="change-language {{ isEnglish ? 'unactive' : 'active' }}" 
-    (click)="switchLanguage('en')">En</button>
-  <button 
-    class="change-language {{ isEnglish ? 'active' : 'unactive' }}" 
-    (click)="switchLanguage('ru')">Ru</button>
-</div>
+<button mat-button [matMenuTriggerFor]="lang">{{ language | uppercase }}</button>
+<mat-menu #lang="matMenu">
+  <button mat-menu-item value="ru" (click)="switchLanguage($event)">RU</button>
+  <button mat-menu-item value="en" (click)="switchLanguage($event)">EN</button>
+</mat-menu>

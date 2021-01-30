@@ -1,5 +1,4 @@
 <main class="main">
-	<h1 class="main__title">{{ 'title' | translate }}</h1>
 	<div *ngFor="let slide of this.data, let e=even;">
 		<div class="{{ e ? 'main__my-works-left' : 'main__my-works-right' }}">
 			<article class="main__container">

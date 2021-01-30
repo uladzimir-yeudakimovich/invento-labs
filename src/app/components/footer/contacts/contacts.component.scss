@@ -1,18 +1,25 @@
 @import "../../../styles/colors.scss";
 
-.contacts_title {
+.contacts {
   display: flex;
+  align-items: center;
   justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  background-color: $footer-background;
+  background-image: url(/assets/images/social_icons/bg-contours.svg);
 }
 
 .contacts_items {
+  width: 330px;
+  margin: 5px 0px;
   padding: 0;
 }
 
 .contact-item {
   display: flex;
   align-items: center;
-  margin-top: 10px;
+  padding-top: 10px;
   list-style-type: none;
   font-size: 1.2rem;
 }
