@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
 import { LanguageService } from '../../services/language.servise';
-import { InformationResponse, Info, Stars } from '../../models/nodels';
+import { InformationResponse, Info, Stars } from '../../models/models';
 
 @Component({
   selector: 'app-header',

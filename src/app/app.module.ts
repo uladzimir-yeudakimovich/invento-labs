@@ -11,6 +11,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NavigationComponent } from './components/navigation/navigation';
 import { ChangeLanguageComponent } from './components/change-language/change-language';
 import { HeaderComponent } from './components/header/header.component';
 import { MainComponent } from './components/main/main.component';
@@ -42,6 +43,7 @@ export function createTranslateLoader(http: HttpClient) {
   ],
   declarations: [
     AppComponent,
+    NavigationComponent,
     ChangeLanguageComponent,
     HeaderComponent,
     MainComponent,
