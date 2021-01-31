@@ -3,11 +3,11 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 import { DataService } from '../../services/data.service';
 
 @Component({
-  selector: 'app-main',
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss']
+  selector: 'app-projects',
+  templateUrl: './projects.component.html',
+  styleUrls: ['./projects.component.scss']
 })
-export class MainComponent implements OnInit {
+export class ProjectsComponent implements OnInit {
   data: Array<object> = [];
   customOptions: OwlOptions = {
     items: 1,

@@ -1,11 +1,11 @@
 @import "../../styles/colors.scss";
 
-.header {
+.home {
   display: flex;
   justify-content: center;
-  background-color: $header-background;
+  background-color: $home-background;
   background-image: url(/assets/images/social_icons/bg-contours.svg);
-  color: $header-text-color;
+  color: $home-text-color;
 }
 
 .container {
@@ -14,24 +14,24 @@
   margin: 15px;
 }
 
-.header__phone {
+.home__phone {
   display: none;
   justify-content: center;
   margin-top: 30px;
 }
 
-.header__subname {
+.home__subname {
   text-align: center;
   font-size: 1.6em;
 }
 
-.header__name {
+.home__name {
   font-size: 2.2em;
   text-align: center;
   margin: 0;
 }
 
-.header__description {
+.home__description {
   padding: 15px;
   text-align: justify;
   line-height: 1.4;
@@ -48,13 +48,13 @@
   }
 }
 
-.header__tablet {
+.home__tablet {
   display: none;
   justify-content: center;
   margin-top: 30px;
 }
 
-.header__description-title {
+.home__description-title {
   text-align: center;
   margin: 10px 0;
 }
@@ -77,21 +77,21 @@
     width: 100%;
   }
   
-  .header__laptop {
+  .home__laptop {
     display: none;
   }
 
-  .header__tablet {
+  .home__tablet {
     display: flex;
   }
 }
 
 @media (max-width: 768px) {
-  .header__tablet {
+  .home__tablet {
     display: none;
   }
 
-  .header__phone {
+  .home__phone {
     display: flex;
   }
 }

@@ -13,8 +13,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './components/navigation/navigation';
 import { ChangeLanguageComponent } from './components/change-language/change-language';
-import { HeaderComponent } from './components/header/header.component';
-import { MainComponent } from './components/main/main.component';
+import { HomeComponent } from './components/home/home.component';
+import { ProjectsComponent } from './components/projects/projects.component';
 import { FooterModule } from './components/footer/footer.module';
 import { environment } from '../environments/environment';
 
@@ -45,8 +45,8 @@ export function createTranslateLoader(http: HttpClient) {
     AppComponent,
     NavigationComponent,
     ChangeLanguageComponent,
-    HeaderComponent,
-    MainComponent,
+    HomeComponent,
+    ProjectsComponent,
   ],
   providers: [],
   bootstrap: [ AppComponent ]
