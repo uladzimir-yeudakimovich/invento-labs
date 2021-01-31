@@ -3,8 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { ContactsComponent } from './contacts/contacts.component';
-import { FooterComponent } from './footer.component';
+import { FeedbackComponent } from './feedback.component';
 import { MessagesComponent } from './messages/messages.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
 
@@ -16,13 +15,12 @@ import { RegisterFormComponent } from './register-form/register-form.component';
     ReactiveFormsModule,
 	],
 	exports: [
-		FooterComponent
+		FeedbackComponent
 	],
   declarations: [
-    ContactsComponent,
-    FooterComponent,
+    FeedbackComponent,
     MessagesComponent,
 		RegisterFormComponent,
   ]
 })
-export class FooterModule { }
+export class FeedbackModule { }

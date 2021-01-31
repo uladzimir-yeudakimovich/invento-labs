@@ -1,12 +1,12 @@
 @import "../../styles/colors.scss";
 
-.footer {
+.footfeedbacker {
   height: 100%;
-  background-color: $footer-background;
+  background-color: $feedback-background;
   background-image: url(/assets/images/social_icons/bg-contours.svg);
 }
 
-.footer_information {
+.feedback_information {
   display: flex;
   justify-content: center;
 }
@@ -18,7 +18,7 @@
 }
 
 @media (max-width: 768px) {
-  .footer_information {
+  .feedback_information {
     display: block;
   }
 

@@ -13,9 +13,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './components/navigation/navigation';
 import { ChangeLanguageComponent } from './components/change-language/change-language';
+import { ContactsComponent } from './components/contacts/contacts.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProjectsComponent } from './components/projects/projects.component';
-import { FooterModule } from './components/footer/footer.module';
+import { FeedbackModule } from './components/feedback/feedback.module';
 import { environment } from '../environments/environment';
 
 export function createTranslateLoader(http: HttpClient) {
@@ -38,13 +39,14 @@ export function createTranslateLoader(http: HttpClient) {
     BrowserAnimationsModule,
     MaterialModule,
     AppRoutingModule,
-    FooterModule,
+    FeedbackModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   declarations: [
     AppComponent,
     NavigationComponent,
     ChangeLanguageComponent,
+    ContactsComponent,
     HomeComponent,
     ProjectsComponent,
   ],

@@ -12,7 +12,7 @@ export class ContactsComponent {
     {icon: 'lt-icon-envelope', link: 'mailto:uladzimir.yeudakimovich@gmail.com', name: 'uladzimir.yeudakimovich@gmail.com'},
     {icon: 'lt-icon-linkedin', link: 'https://www.linkedin.com/in/uladzimir-yeudakimovich', name: 'Linkedin'},
     {icon: 'lt-icon-github', link: 'https://github.com/uladzimir-yeudakimovich', name: 'Github'},
-    // {icon: 'lt-icon-cloud', link: 'assets/CV_Uladzimir Yeudakimovich.pdf', name: 'footer.cv', option: 'download'},
+    // {icon: 'lt-icon-cloud', link: 'assets/CV_Uladzimir Yeudakimovich.pdf', name: 'feedback.cv', option: 'download'},
     // {icon: 'lt-icon-codewars', link: 'https://www.codewars.com/users/uladzimir.yeudakimovich', name: 'CodeWars'},
     // {icon: 'lt-icon-students-cap', link: 'https://www.duolingo.com/91YN1', name: 'Duolingo'},
   ];
