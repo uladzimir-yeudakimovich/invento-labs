@@ -11,7 +11,7 @@
 .container {
   max-width: 600px;
   width: 50%;
-  margin: 0;
+  margin: 15px;
 }
 
 .header__phone {
@@ -22,10 +22,11 @@
 
 .header__subname {
   text-align: center;
+  font-size: 1.6em;
 }
 
 .header__name {
-  font-size: 2.2rem;
+  font-size: 2.2em;
   text-align: center;
   margin: 0;
 }
@@ -40,6 +41,10 @@
     margin: 0;
     line-height: 1.5;
     list-style-type: none;
+  }
+
+  p {
+    font-size: 1.4em;
   }
 }
 

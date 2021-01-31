@@ -28,6 +28,7 @@ export class AppComponent implements OnDestroy {
       if (event instanceof NavigationEnd) {
         const name = event.url.replace('/', '');
         this.title = name.charAt(0).toUpperCase() + name.slice(1);
+        if (!this.title) this.title = 'Home';
       }
     });
   }
