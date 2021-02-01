@@ -1,6 +1,4 @@
-{
-	"title": "Projects",
-	
+{	
 	"home": {
 		"position": "Software Engineer",
 		"name": "Uladzimir Yeudakimovich",
@@ -13,12 +11,15 @@
 		"technology": {
 			"title": "Technology"
 		}
-	},
-
-	"feedback": {
+  },
+  
+  "contacts": {
 		"name": "Contact Information",
 		"cv": "Download CV",
-		"subname": "Links to my social networks:",
+		"subname": "Links to my social networks:"
+  },
+
+	"feedback": {
 		"message": {
 			"comments": "Comments",
 			"name": "Name",
