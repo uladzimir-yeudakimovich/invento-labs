@@ -1,7 +1,7 @@
 export interface InformationResponse {
   education: Info[];
   experience: Info[];
-  technology: Stars[];
+  technology: Competence[];
   general: Info;
 }
 
@@ -11,7 +11,25 @@ export interface Info {
   name?: string;
 }
 
-export interface Stars {
+export interface Competence {
   level: number[];
   technology: string;
+}
+
+export interface Project {
+  click: string;
+  description?: string;
+  en: string;
+  images: string;
+  link: string;
+  name: string;
+  ru: string;
+}
+
+export interface Message {
+  email: string;
+  en: string;
+  message: string;
+  name: string;
+  ru: string;
 }

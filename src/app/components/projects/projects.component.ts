@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { DataService } from '../../services/data.service';
+import { LanguageService } from '../../services/language.servise';
+import { Project } from '../../models/models';
 
 @Component({
   selector: 'app-projects',
@@ -8,7 +10,7 @@ import { DataService } from '../../services/data.service';
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
-  data: Array<object> = [];
+  data: Project[];
   customOptions: OwlOptions = {
     items: 1,
     loop: true,
@@ -17,12 +19,16 @@ export class ProjectsComponent implements OnInit {
     autoplayHoverPause: true
   }
 
-  constructor(public dataService: DataService) { }
+  constructor(public dataService: DataService, public languageService: LanguageService) { }
 
   ngOnInit() {
-    this.dataService.getProjects()
-      .subscribe(
-        (response: Array<object>) => this.data = response
-      );
+    this.dataService.getProjects().subscribe((response: Project[]) => {
+      this.languageService.currentLang.subscribe((lang: string) => {
+        this.data = response.map(el => {
+          el.description = el[lang];
+          return el;
+        });
+      });
+    });
   }
 }

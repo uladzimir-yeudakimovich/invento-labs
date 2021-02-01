@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { MessageService } from '../../../services/message.service';
+import { Message } from '../../../models/models';
 
 @Component({
   selector: 'app-messages',
@@ -8,14 +9,14 @@ import { MessageService } from '../../../services/message.service';
   styleUrls: ['./messages.component.scss']
 })
 export class MessagesComponent implements OnInit {
-  messages: Array<object>;
+  messages: Message[];
 
   constructor(public messageService: MessageService) { }
 
   ngOnInit() {
     this.messageService.getMessages()
       .subscribe(
-        (messages: Array<object>) => {
+        (messages: Message[]) => {
           this.messages = messages;
           this.messageService.messages = messages;
         },

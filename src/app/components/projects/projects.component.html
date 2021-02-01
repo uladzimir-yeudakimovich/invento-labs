@@ -6,7 +6,7 @@
 					<h3 class="projects__my-work_slide-name">{{ slide.name | translate }}</h3>
 					<a *ngIf="slide.link" class="projects__my-work_slide-link" href="{{ slide.link }}" target="_blank" rel="noopener">{{ slide.click | translate }}</a>
 				</div>
-				<p class="projects__my-work_description">&nbsp;{{ slide.description | translate }}</p>
+				<p class="projects__my-work_description">&nbsp;{{ slide.description }}</p>
 			</article>
 			<owl-carousel-o [options]="customOptions" class="projects__container" *ngIf="data">
 				<ng-container *ngFor="let img of slide.images; let i=index">
