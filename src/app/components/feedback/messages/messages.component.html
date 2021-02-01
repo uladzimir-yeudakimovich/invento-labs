@@ -1,11 +1,9 @@
-<div class="messages">
-  <div class="row message_items">
-    <h5 class="col-1">{{ 'feedback.message.name' | translate }}</h5>
-    <h5 class="col-2">{{ 'feedback.message.messages' | translate }}</h5>
-  </div>
-  <div class="row message_items" *ngFor="let message of messages; let i = index">
-    <p class="col-1">{{ message.name }}</p>
-    <p class="col-2">&nbsp;{{ message.message | translate }}</p>
-    <!-- <span class="message_delete" (click)="delete(i)">&times;</span> -->
+<div class="feedbacks">
+  <div class="row feedback_items" *ngFor="let feedback of feedbacks; let i = index">
+    <div class="user_information">
+      <span>{{ feedback.name }}</span>
+      <span>{{ feedback.time | date: 'medium' }}</span>
+    </div>
+    <p class="col-2">&nbsp;{{ feedback.message | translate }}</p>
   </div>
 </div>

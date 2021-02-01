@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+import { Feedback } from '..//models/models';
+
 @Injectable({
   providedIn: 'root',
 })
 export class MessageService {
-  messages: Array<object> = [];
+  headers = new HttpHeaders({'Content-Type': 'application/json'});
+  messages: Feedback[];
 
   constructor(private http: HttpClient) { }
 
@@ -13,9 +16,13 @@ export class MessageService {
     return this.http.get('https://portfolio-57f5d.firebaseio.com/messages.json');
   }
 
-  updateMessage(message: object) {
+  updateMessage(message: Feedback) {
+    message.time = new Date();
     this.messages.push(message);
-    const headers = new HttpHeaders({'Content-Type': 'application/json'});
-    return this.http.put('https://portfolio-57f5d.firebaseio.com/messages.json', this.messages, {headers: headers});
+    return this.http.put(
+      'https://portfolio-57f5d.firebaseio.com/messages.json',
+      this.messages,
+      { headers: this.headers }
+    );
   }
 }

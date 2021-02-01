@@ -26,10 +26,9 @@ export interface Project {
   ru: string;
 }
 
-export interface Message {
+export interface Feedback {
   email: string;
-  en: string;
   message: string;
   name: string;
-  ru: string;
+  time: Date;
 }
